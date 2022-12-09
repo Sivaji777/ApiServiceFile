@@ -1,5 +1,5 @@
 /* using Fetch Method */
-
+  useEffect(() => {
     const url = 'https://rr-api.moshimoshi.cloud/api/rr/property_filter_list'
     const options = {
       body: JSON.stringify({ status: "location" }),
@@ -8,11 +8,14 @@
         "Content-type": "application/json; charset=UTF-8"
       }
     }
-    fetch(url, options).then((req, res) => {
-      console.log(res, 'ress');
-    }).catch((err) => {
-      console.log(err, 'error');
-    })
+
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res, 'ress');
+      }).catch((err) => {
+        console.log(err, 'error');
+      })
   }, [])
   
   
