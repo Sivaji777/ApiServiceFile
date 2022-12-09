@@ -1,3 +1,40 @@
+/* using Fetch Method */
+
+    const url = 'https://rr-api.moshimoshi.cloud/api/rr/property_filter_list'
+    const options = {
+      body: JSON.stringify({ status: "location" }),
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    }
+    fetch(url, options).then((req, res) => {
+      console.log(res, 'ress');
+    }).catch((err) => {
+      console.log(err, 'error');
+    })
+  }, [])
+  
+  
+  /* using Axios */
+  
+   const url = 'https://rr-api.moshimoshi.cloud/api/rr/property_filter_list'
+  const payload = { status: "location" }
+  const headers = {
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  }
+
+  useEffect(() => {
+    axios.post(url, payload, headers).then((req, res) => {
+      console.log(res, 'res');
+    }).then((error) => {
+      console.log(error);
+    })
+  }, [])
+
+
 /* using fetch method-1 */
      const token = 'fpyzw76umprjq7cpogb22tnglr7e644neoxp1727'
      fetch('https://api.json-generator.com/templates/Ekx4iiPPM8Ee/data', {
