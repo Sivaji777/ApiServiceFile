@@ -1,4 +1,18 @@
 /* using Fetch Method */
+   const formData = new FormData();
+    formData.append("image", fileData);
+    const headers = {
+      headers: {
+        // 'Accept': "application/json",
+        // "Content-Type": "application/json",
+        "x-access-token":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzNkOTJjNWIzNzlmOWJlZjRmNzU4N2MiLCJ0eXBlIjoidmVuZG9yIiwiaWF0IjoxNjcxNDI5NTEzLCJleHAiOjE2NzE1MTU5MTN9.Bwb93QgJBvztDr-SO6qGbjZzOF0Qus3u8jOanzRWcfo",
+      },
+    };
+    const url = "http://moshimoshi.cloud:3004/user/profile-img";
+    const data = await axios.put(url, formData, headers);
+
+/* using Fetch Method */
   useEffect(() => {
     const url = 'https://rr-api.moshimoshi.cloud/api/rr/property_filter_list'
     const options = {
