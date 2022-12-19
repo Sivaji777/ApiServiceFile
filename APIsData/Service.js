@@ -1,4 +1,4 @@
-/* using Fetch Method */
+/* using Axios x-access-token*/
    const formData = new FormData();
     formData.append("image", fileData);
     const headers = {
